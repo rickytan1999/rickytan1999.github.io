@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "utf-8">
+	<link rel = "stylesheet" href = "assignment.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script>
+		function clearComment(){
+			var cmtBox = document.getElementById("cmtInputID");
+			
+			cmtBox.value="";
+		}
+		
+		function successCmt(){
+			var cmtBox = document.getElementById("cmtInputID");
+			
+			
+			var original = document.getElementById("cmtBlock");
+			var image = document.getElementById("loadingImage");
+			
+			var clone = original.cloneNode(true);
+			clone.id="";
+			clone.className="cmtBlock";
+			clone.childNodes[1].childNodes[2].childNodes[3].childNodes[1].childNodes[1].innerHTML=cmtBox.value;
+			<!--original.after(clone);-->
+			image.style.display = "block";
+			
+			setTimeout(() => image.style.display = "none", 1000);
+			setTimeout(() => original.after(clone), 1000);
+			
+			cmtBox.value="";
+			
+		}
+	</script>
+	<title>UIAA Platform - University Name</title> <!--Notice: Change "University Name" to the name from database-->
+</head>
+<body class="mainBackground">
+	<nav>
+		<a href="pageStudent.html" class="headerBack">&#8249;</a>
+		<a href="index.html" class="headerBtn">Logout</a>
+		<img src="pictures/logo3.png" alt="logo" class="logoUniInfo">
+	</nav>
+	<header>
+		<h1 class="uniInfoHeader"></h1>
+	</header>
+	<main>
+		<div class="uniListCenter">
+			<div class="uniList">
+				<div class="uniBox2">
+					<div class="picColumn2">
+						<img src="pictures/HELPUni.jpg" alt="HELP University" class="imgSize2">
+					</div>
+					<div class="descColumn2">
+						<h3 class="uniName">HELP University</h3>
+						<div class="descDetail2">
+							<p>	<span>Available Courses:</span><br>
+								<br>
+								<span>Foundation Courses(Pre-University)</span><br>
+								1. Foundation in Arts<br>
+								2. Foundation in Science<br>
+								3. Foundation Studies in Arts<br>
+								4. Foundation Studies in Science<br>
+								<br>
+								<span>Diploma Courses</span><br>
+								1. Diploma in Information Technology<br>
+								2. Diploma in Business<br>
+								3. Diploma in Communication<br>
+								4. Diploma in Early Childhood<br>
+								<br>
+								<span>Degree Courses</span><br>
+								1. Bachelor of Information Technology<br>
+								2. Bachelor of Psychology<br>
+								3. Bachelor of Laws<br>
+								4. Bachelor of Management<br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="btnPart">
+						<a href="pageMakeAppointment.html" class="btnUni">Make Appointment</a>
+						<a href="pageApply.html" class="btnUni">Apply</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="uniListCenter">
+			<div class="uniList">
+				<h2>Comment</h2>
+				<form method="post">
+					<table class="cmtBlockWrite">
+						<tr>
+							<td class="profWrite">
+								<div class="cmtProfileWrite">
+									<img src="pictures/anonymous.jpg" alt="Profile Picture" class="profileSize">
+								</div>
+							</td>
+							<td class="descWrite">
+								<textarea id="cmtInputID" placeholder="Write your comments here..." class="cmtInput"></textarea>
+								<div class="cmtBtn">
+									<a onclick="clearComment()" class="btnCmt">Clear</a>
+									<button type="button" onclick="successCmt()" class="btnCmt">Comment</button>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</form>
+				<img id="loadingImage" alt="loading" src="pictures/loading.gif">
+				<!--One Comment Block with Id-->
+				<table id="cmtBlock">
+					<tr>
+						<th class="cmtTitleEmpty"></th><th class="cmtTitle">User Name</th> <!--Get title from database-->
+					</tr>
+					<tr>
+						<td class="prof">
+							<div class="cmtProfile">
+								<img src="pictures/anonymous.jpg" alt="Profile Picture" class="profileSize">
+							</div>
+						</td>
+						<td class="desc">
+							<div class="cmtDesc">
+								<p>User Comments</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="footerInfo">
+			<div class="footerInfoHalf">
+				<div class="footerHalfDesc">
+					<div class="descContent">
+						<p>More information about Malaysian Universities to users whom are needed for help</p>
+						<a href="pageContact.html">Contact Us</a>
+						<a href="pageReport.html">Report Bugs</a>
+					</div>
+				</div>
+			</div>
+			<div class="footerInfoHalf2">
+				<div class="footerHalfOne">
+					<span>Supported Devices</span><br>
+					PC, Laptop, Mobile<br>
+					<br>
+					<span>End Users</span><br>
+					User, University Admin, SAS Admin
+				</div>
+				<div class="footerHalfTwo">
+					<span>Social Icons</span><br>
+					<i class="fab fa-facebook-square"></i>
+					<i class="fab fa-twitter-square"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-google-plus-square"></i><br>
+					<i class="fab fa-youtube-square"></i>
+					<i class="fab fa-skype"></i>
+					<i class="fab fa-linkedin"></i>
+					<i class="fab fa-snapchat-square"></i>
+				</div>
+			</div>
+		</div>
+		<div class="footerInfoBottom">
+		<p class="footerCopyright"><small>Copyright &copy; 2019 UIAA Platform. All rights reserved.</small></p>
+		<p class="footerTermPolicy"><small><span>Terms</span> | <span>Privacy Policy</span></small></p>
+		</div>
+	</footer>
+</body>
+</html>
+
+<!--One Comment Block-->
+<!--
+<div class="cmtBlock">
+	<img>
+	<div class="cmtProfile">
+		<img src="pictures/anonymous.jpg" class="profileSize">
+	</div>
+	<div class="cmtDesc">
+		<h3 class="cmtTitle">Data Title</h3> {Get title from database}
+		<div class="cmtArea">
+			br<br>br<br>br<br>br<br>br<br>br<br>br<br>br<br>br
+		</div>
+	</div>
+</div>
+-->

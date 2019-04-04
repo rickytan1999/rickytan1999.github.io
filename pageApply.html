@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="assignment.css">
+	<script>
+		function display(level) {
+			var diploma = document.getElementById("DIP");
+			var degree = document.getElementById("BIT");
+			var fdn = document.getElementById("FDN");
+			var fdns = document.getElementById("FDNS");
+			
+			if (level=="diploma"){
+				diploma.style.display = "block";
+				degree.style.display = "none";
+				fdn.style.display = "none";
+				fdns.style.display = "none";
+			} 
+			else if (level=="degree"){
+				diploma.style.display = "none";
+				degree.style.display = "block";
+				fdn.style.display = "none";
+				fdns.style.display = "none";
+			}
+			else if (level=="foundation"){
+				diploma.style.display = "none";
+				degree.style.display = "none";
+				fdn.style.display = "block";
+				fdns.style.display = "none";
+			}
+			else{
+				diploma.style.display = "none";
+				degree.style.display = "none";
+				fdn.style.display = "none";
+				fdns.style.display = "block";
+			}
+		}
+		
+		function courseInput(courseName){ 
+			document.getElementById("course").value = courseName;
+		}
+		
+	</script>
+	
+	<title>UIAA Platform - Apply Programme</title>
+</head>
+<body class="applyBackground">
+	<div class="applyForm">
+		<form action="pageUniInfo.html" method="post">
+			<h1 class="loginHeader">Apply Programme</h1>
+			<div class="inlineMiddle">
+				<table>
+					<tr>
+						<th>
+							<label>Level: </label>
+						</th>
+						<td>
+							<select name="courseLevels" onchange="display(this.value)" class="levelList" required>
+								<option value="" class="none">- - - Select course level - - -</option>
+								<option value="diploma">Diploma</option>
+								<option value="degree">Bachelor</option>
+								<option value="foundation">Foundation</option>
+								<option value="foundationS">Foundation Studies</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<label>Course: </label>
+						</th>
+						<td>
+							<input type="text" id="course" name="courses" value="Course not selected" class="readBox" readonly>
+						</td>
+					</tr>
+				</table>
+				<div id="DIP" class="courseLevel">
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Information Technology</summary>
+						<p>	<span>Duration:</span> 2 years<br>
+							<span>Intakes:</span> Jan 9, April 22, May 23, Augt 21, Oct 9<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 35,700<br>
+							<br>
+							<span>Qualification:</span><br>
+							3 credits in SPM (pass in Bahasa Melayu and History)<br>
+							3 B's in UEC
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Business</summary>
+						<p>	<span>Duration:</span> 2 years<br>
+							<span>Intakes:</span> Jan 9, March 6, May 22, Augt 21, Oct 9<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 28,700<br>
+							<br>
+							<span>Qualification:</span><br>
+							3 credits in SPM (pass in Bahasa Melayu and History)<br>
+							3 B's in UEC
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Communication</summary>
+						<p>	<span>Duration:</span> 2 years<br>
+							<span>Intakes:</span> Jan 10, March 28, May 16, Augt 22<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 41,200<br>
+							<br>
+							<span>Qualification:</span><br>
+							3 credits SPM (pass in English)<br>
+							3 B's in UEC
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Early Childhood</summary>
+						<p>	<span>Duration:</span> 30 months<br>
+							<span>Intakes:</span> Jan 10, May 16, Augt 22<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 18,600<br>
+							<br>
+							<span>Qualification:</span><br>
+							3 credits in SPM
+						</p>
+					</details>
+				</div>
+				
+				<div id="BIT" class="courseLevel">
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Information Technology</summary>
+						<p>	<span>Duration:</span> 3 years<br>
+							<span>Intakes:</span> 19 Jan, 22 April, 23 May, 21 Aug, 9 Oct<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 60,200<br>
+							<br>
+							<span>Qualification:</span><br>
+							STPM with 2 Grade C<br>
+							A-Level with 2 passes<br>
+							UEC with 3 B's<br>
+							Canadian Pre-University with minimum average of 50%
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Psychology</summary>
+						<p>	<span>Duration:</span> 3 years<br>
+							<span>Intakes:</span> 9 Jan, 23 May, 21 Aug<br>
+							<span>Campus:</span> HELP Subang 2<br>
+							<span>Fees:</span> RM 73,700<br>
+							<br>
+							<span>Qualification:</span><br>
+							STPM with 2 credits<br>
+							A-Level with 1 C, 1 D<br>
+							UEC with 5 B's<br>
+							Canadian Pre-University with average 65%
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Laws</summary>
+						<p>	<span>Duration:</span> 3 years<br>
+							<span>Intakes:</span> 2 Sep<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 52,700<br>
+							<br>
+							<span>Qualification:</span><br>
+							STPM with 2 Grade C<br>
+							A-Level 2 passes<br>
+							UEC 5B's
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Management</summary>
+						<p>	<span>Duration:</span> 3 years<br>
+							<span>Intakes:</span> 9 Jan, 20 Feb, 22 May, 21 Aug, 9 Oct<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 62,300<br>
+							<br>
+							<span>Qualification:</span><br>
+							STPM 2 C<br>
+							A-Level 2 passes<br>
+							UEC 5 B's<br>
+							Canadian Pre-University minimun average of 50%<br>
+							Australian Matriculation 50%
+						</p>
+					</details>
+				</div>
+				
+				<div id="FDN" class="courseLevel">
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Arts</summary>
+						<p>	<span>Duration:</span> 1 years<br>
+							<span>Intakes:</span> Jan 14, April 3, May 13, Sep 5<br>
+							<span>Campus:</span> HELP Damansara, HELP Subang 2<br>
+							<span>Fees:</span> RM 20,000<br>
+							<br>
+							<span>Qualification:</span><br>
+							5 SPM/SPMV Credits(pass in Bahasa Melayu and History)<br>
+							3 Bs in UEC<br>
+							Credit in English from SPM/SPMV/UEC<br>
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Science</summary>
+						<p>	<span>Duration:</span> 1 years<br>
+							<span>Intakes:</span> Jan 14, April 3, May 13, Sep 5<br>
+							<span>Campus:</span> HELP Damansara<br>
+							<span>Fees:</span> RM 20,000<br>
+							<br>
+							<span>Qualification:</span><br>
+							5 SPM/SPMV Credits(pass in Bahasa Melayu and History)<br>
+							3 Bs in UEC<br>
+							Credit in Mathematics and 2 Science(Biology/Chemistry/Physics) from SPM/SPMV/UEC
+						</p>
+					</details>
+				</div>
+				
+				<div id="FDNS" class="courseLevel">
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Arts</summary>
+						<p>	<span>Duration:</span> 1 years<br>
+							<span>Intakes:</span> Jan 7, April 8, Aug 5<br>
+							<span>Campus:</span> HELP CAT<br>
+							<span>Fees:</span> RM 13,000<br>
+							<br>
+							<span>Qualification:</span><br>
+							5 credits SPM (pass in Bahasa Melayu and History)
+						</p>
+					</details>
+					<details class="detailsLine">
+						<summary onclick="courseInput(this.innerHTML)">Science</summary>
+						<p>	<span>Duration:</span> 1 years<br>
+							<span>Intakes:</span> Jan 7, April 8, Aug 5<br>
+							<span>Campus:</span> HELP CAT<br>
+							<span>Fees:</span> RM 13,000<br>
+							<br>
+							<span>Qualification:</span><br>
+							5 credits SPM<br>
+							5 Bs UEC<br>
+							credits in Mathematics and 2 Science from SPM/UEC
+						</p>
+					</details>
+				</div>
+				
+			</div>
+			<div class="loginBtnAlign">
+				<a href="pageUniInfo.html" class="loginBtn">Back</a>
+				<button type="submit" class="loginBtn2">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

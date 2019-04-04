@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="assignment.css">
+	<title>UIAA Platform - Make Appointment</title>
+</head>
+<body class="appointBackground">
+	<div class="makeAppointmentForm">
+		<form action="pageUniInfo.html" method="post">
+			<h1 class="loginHeader">Make Appointment</h1>
+			<table class="applicationTable">
+				<tr>
+					<th>University</th>
+				</tr>
+				<tr>
+					<td>HELP University</td> <!--Will be displayed according to Uni name with database-->
+				</tr>
+				<tr>
+					<th>Date</th>
+				</tr>
+				<tr>
+					<td><input type="date" name="appointDate" class="inputBox" required></td>
+				</tr>
+				<tr>
+					<th>Full Name(IC/Passport Name)</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="fullName" class="inputBox" pattern = "[a-zA-z]+" title="Must contain only characters" required></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+				</tr>
+				<tr>
+					<td>
+					<input type="radio" name="genderAppoint" value="male" required><label class="fontSize2" >Male</label>
+					<input type="radio" name="genderAppoint" value="female"><label class="fontSize2" >Female</label>
+					<input type="radio" name="genderAppoint" value="others"><label class="fontSize2" >Others</label>
+					</td>
+				</tr>
+				<tr>
+					<th>Email</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="emailAppoint" class="inputBox" pattern="[a-z0-9._%+-]+@gmail.com|[a-z0-9._%+-]+@hotmail.com|[a-z0-9._%+-]+@yahoo.com|[a-z0-9._%+-]+@helplive.edu.my|[a-z0-9._%+-]+@help.edu.my" 
+					title="Example: example123@gmail.com. Supported templates: gmail.com, hotmail.com, yahoo.com, helplive.edu.my, help.edu.my" required></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="phoneAppoint" class="inputBox"  pattern="[0-9]{10}|[0-9]{11}|[0-9]{3}[-][0-9]{7}|[0-9]{3}[-][0-9]{8}" title="Example: 012-345 6789" required></td>
+				</tr>
+			</table>
+			
+			<div class="loginBtnAlign">
+				<a href="pageUniInfo.html" class="loginBtn">Back</a>
+				<button type="submit" class="loginBtn2">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

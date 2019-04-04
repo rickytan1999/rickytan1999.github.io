@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="assignment.css">
+	<title>UIAA Platform - Make Appointment</title>
+</head>
+<body class="appointBackground">
+	<div class="makeAppointmentForm">
+		<form action="javascript:history.go(-1)" method="post">
+			<h1 class="loginHeader">Customer Service Center</h1>
+			<table class="applicationTable">
+				<tr>
+					<th>User Type?</th>
+				</tr>
+				<tr>
+					<td>
+					<select>
+						<option value="#">University Admin</option>
+						<option value="#">Normal User</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<th>Date</th>
+				</tr>
+				<tr>
+					<td><input type="date" name="appointDate" class="inputBox" required></td>
+				</tr>
+				<tr>
+					<th>Problem Desription</th>
+				</tr>
+				<tr>
+					<td><textarea rows="4" cols="37" name="address" class="addrBox" required placeholder="What problem you faced?"></textarea></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="emailAppoint" class="inputBox" pattern="[a-z0-9._%+-]+@gmail.com|[a-z0-9._%+-]+@hotmail.com|[a-z0-9._%+-]+@yahoo.com|[a-z0-9._%+-]+@helplive.edu.my|[a-z0-9._%+-]+@help.edu.my" 
+					title="Example: example123@gmail.com. Supported templates: gmail.com, hotmail.com, yahoo.com, helplive.edu.my, help.edu.my" required></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="phoneAppoint" class="inputBox"  pattern="[0-9]{10}|[0-9]{11}|[0-9]{3}[-][0-9]{7}|[0-9]{3}[-][0-9]{8}" 
+						title="Example: 012-345 6789" required></td>
+				</tr>
+			</table>
+			
+			<div class="loginBtnAlign">
+				<a href="javascript:history.go(-1)" class="loginBtn">Back</a>
+				<button type="submit" class="loginBtn2">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

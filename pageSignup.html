@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="assignment.css">
+	<title>UIAA Platform - Sign up</title>
+</head>
+<body class="loginBackground">
+	<div class="signupForm">
+		<form action="pageLogin.html" method="post">
+			<h1 class="loginHeader">Sign Up</h1>
+			<table class="tableAlign">
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="firstName" class="inputBoxHalf" required></td>
+					<td><input type="text" name="lastName" class="inputBoxHalf" required></td>
+				</tr>
+				<tr>
+					<th colspan="2">Username</th>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="text" name="username" class="inputBox" required></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<input type="radio" name="gender" value="male" required><label class="fontSize">Male</label>
+					<input type="radio" name="gender" value="female"><label class="fontSize">Female</label>
+					<input type="radio" name="gender" value="others"><label class="fontSize">Others</label>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">Email</th>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="email" name="email" class="inputBox" pattern="[a-z0-9._%+-]+@gmail.com|[a-z0-9._%+-]+@hotmail.com|[a-z0-9._%+-]+@yahoo.com|[a-z0-9._%+-]+@helplive.edu.my|[a-z0-9._%+-]+@help.edu.my" 
+					title="Example: example123@gmail.com. Supported templates: gmail.com, hotmail.com, yahoo.com, helplive.edu.my, help.edu.my" required></td>
+				</tr>
+				<tr>
+					<th colspan="2">Password</th>
+				</tr>
+				<tr>
+					<td colspan="2"><input id = "psw" type="password" name="password" class="inputBox" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					title="Must contain at least one number[0-9], one uppercase[A-Z], one lowercase[a-z], and at least 8 or more characters" 
+					onfocus = "dispInvalid()" onblur = "unDisp()" onkeyup = "input()" required>
+					<div id="message">
+						<p class = "invalid" id = "lower">At least one <b>lowercase</b> letter</p>
+						<p class = "invalid" id = "upper">At least one <b>capital (uppercase)</b> letter</p>
+						<p class = "invalid" id = "num">At least one <b>number</b></p>
+						<p class = "invalid" id = "min">Minimum <b>8 characters</b></p>
+					</div>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">Confirm Password</th>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="password" name="password2" class="inputBox" id = "Confirm_Psw" onkeyup = "check()" onfocus = "display()" onblur = "nondisplay()" required>
+					<span id = "confirm_message"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>Date of Birth</th>
+					<th>Phone</th>
+				</tr>
+				<tr>
+					<td><input type="date" name="birthDate" class="inputBoxHalf" required></td>
+					<td><input type="tel" name="phone" class="inputBoxHalf" pattern="[0-9]{10}|[0-9]{11}|[0-9]{3}[-][0-9]{7}|[0-9]{3}[-][0-9]{8}" title="Example: 012-345 6789" required></td>
+				</tr>
+				<tr>
+					<th colspan="2">I/C No.</th>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="text" name="ICNo" class="inputBox" pattern="[0-9]{12}|[0-9]{6}[-][0-9]{2}[-][0-9]{4}" title="Must contain 12 numbers, Example: 012345-67-8900" required></td>
+				</tr>
+				<tr>
+					<th colspan="2">Address</th>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea rows="4" cols="37" name="address" class="addrBox" required></textarea></td>
+				</tr>
+			</table>
+			
+			<div class="loginBtnAlign">
+				<a href="index.html" class="loginBtn">Back</a>
+				<button type="submit" class="loginBtn2">Confirm</button>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		var psw = document.getElementById("psw");
+		var lower = document.getElementById("lower");
+		var upper = document.getElementById("upper");
+		var num = document.getElementById("num");
+		var min = document.getElementById("min");
+		
+		function dispInvalid(){
+			document.getElementById("message").style.display = "block";
+		}
+		
+		function unDisp(){
+			document.getElementById("message").style.display = "none";
+		}
+		
+		function input(){
+			
+			var lowerLetter = /[a-z]/g;
+			if(psw.value.match(lowerLetter)){
+				lower.classList.remove("invalid");
+				lower.classList.add("valid");
+			}else{
+				lower.classList.remove("valid");
+				lower.classList.add("invalid");
+			}
+			
+			var upperLetter = /[A-Z]/g;
+			if(psw.value.match(upperLetter)){
+				upper.classList.remove("invalid");
+				upper.classList.add("valid");
+			}else{
+				upper.classList.remove("valid");
+				upper.classList.add("invalid");
+			}
+			
+			var number = /[0-9]/g;
+			if(psw.value.match(number)){
+				num.classList.remove("invalid");
+				num.classList.add("valid");
+			}else{
+				num.classList.remove("valid");
+				num.classList.add("invalid");
+			}
+		
+			var minimum = 8;
+			if(psw.value.length >=  minimum){
+				min.classList.remove("invalid");
+				min.classList.add("valid");
+			}else{
+				min.classList.remove("valid");
+				min.classList.add("invalid");
+			}
+		}
+		
+		var comPsw = document.getElementById("Confirm_Psw");
+		
+		function check(){
+			if(comPsw.value.length != 0){
+				if (comPsw.value == psw.value){	
+					document.getElementById("confirm_message").style.color = "green";
+					document.getElementById("confirm_message").innerHTML = "Password Match";
+					comPsw.setCustomValidity("");
+				}else{
+					document.getElementById("confirm_message").style.color = "red";
+					document.getElementById("confirm_message").innerHTML = "Password not Match";
+					comPsw.setCustomValidity("Password not Match");
+				}
+			}else{
+				document.getElementById("confirm_message").innerHTML = "";
+
+			}
+			
+		}
+		
+		function display(){
+			document.getElementById("confirm_message").style.display = "block";
+		}
+		
+		function nondisplay(){
+			document.getElementById("confirm_message").style.display = "none";
+		}
+	
+	</script>
+	
+</body>
+</html>

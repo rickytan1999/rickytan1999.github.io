@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset = "utf-8">
+	<link rel = "stylesheet" href = "assignment.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script>
+	function searching(){
+		var searchBar, caseCheck;
+		
+		searchBar = document.getElementById("uniSearch");
+		caseCheck = searchBar.value.toUpperCase();
+		
+		uniCount = document.getElementsByClassName("uniBox")
+		for(i=0;i<uniCount.length;i++){
+			titleName = uniCount[i].getElementsByClassName("uniName")[0];
+			if(titleName.innerHTML.toUpperCase().indexOf(caseCheck) > -1){
+				uniCount[i].style.display="";
+			}
+			else{
+				uniCount[i].style.display="none";
+			}
+		}
+	}
+	</script>
+	<title>UIAA Platform</title>
+</head>
+<body class="mainBackground">
+	<nav>
+		<a href="index.html" class="headerBtn">Logout</a>
+		<img src="pictures/logo3.png" alt="logo" class="logoStudent">
+	</nav>
+	<header>
+		<h1 class="loggedPageH1">Student</h1>
+	</header>
+	<main>
+		<div class="searchBar">
+			<input type="search" id="uniSearch" name="search" placeholder="Search..." onkeyup="searching()" class="inBoxSearch">
+		</div>
+		<div class="uniListCenter">
+			<div class="uniList">
+				<!--University Description-->
+				<a href="pageUniInfo.html" class="noDecoration">
+					<div class="uniBox">
+						<div class="picColumn">
+							<img src="pictures/HELPUni.jpg" alt="HELP University" class="imgSize">
+						</div>
+						<div class="descColumn">
+							<h3 class="uniName">HELP University</h3>
+							<div class="descDetail">
+								<p>Since 1986 we have grown steadily and sturdily. We have sustained our student numbers 
+								and ensured a robust financial position. We have distinguished ourselves by excelling as a thought leader, an 
+								incubator of outstanding graduates, a model of selective excellence, and as a community-caring institution.
+								<br><br>
+								All these years our educational goals have been to prepare students for a fulfilling and productive stages in 
+								their life, from their first job, to graduate school until their subsequent career. The drives of our vision are
+								our values which are based on “Pride Of Achievement, Sharing Success, The Courage to Be, To Be compassionate, 
+								and To be Significant”</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!--University Description-->
+				<a href="#" class="noDecoration">
+					<div class="uniBox">
+						<div class="picColumn">
+							<img src="pictures/UTARUni.jpg" alt="UTAR University" class="imgSize">
+						</div>
+						<div class="descColumn">
+							<h3 class="uniName">University Tunku Abdul Rahman</h3>
+							<div class="descDetail">
+								<p>Universiti Tunku Abdul Rahman (UTAR) was officially launched on 13 August 2002 as a not-for-profit private 
+								university providing affordable quality education. It is established under the UTAR Education Foundation and 
+								registered under the Malaysian Private Higher Educational Institutions Act 1996.
+								<br><br>
+								Guided by its vision to be a global university of educational excellence, UTAR is highly reputed as one of the 
+								fastest growing private higher education institutions in the country with phenomenal growth in all aspects of its 
+								development since its inception. With the first intake of only 411 students in its Petaling Jaya campus in 2002, 
+								the University’s enrolment has now reached more than 24,000 students with campuses located in Kampar, Perak and 
+								Bandar Sungai Long, Selangor.
+								<br><br>
+								UTAR has graduated over 58,800 students since its inaugural convocation in 2005 and has made impressive strides in 
+								establishing a strong reputation as a comprehensive University with dedication to achieving excellence in teaching 
+								and research. The University currently offers more than 110 academic programmes from Foundation Studies to 
+								Bachelor's, Master’s, and PhD degrees in the fields of Accounting, Business and Economics, Actuarial Science, 
+								Mathematics and Process Management, Agriculture and Food Science, Arts, Social Sciences and Education, Creative 
+								Industries and Design, Engineering and Built Environment, Information and Communication Technology, Life and 
+								Physical Sciences, and Medicine and Health Sciences.</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!--University Description-->
+				<a href="#" class="noDecoration">
+					<div class="uniBox">
+						<div class="picColumn">
+							<img src="pictures/APUUni.jpg" alt="APU University" class="imgSize">
+						</div>
+						<div class="descColumn">
+							<h3 class="uniName">Asia Pacific University</h3>
+							<div class="descDetail">
+								<p>The Asia Pacific University of Technology & Innovation (APU) is amongst Malaysia’s Premier Private Universities, 
+								and is where a unique fusion of technology, innovation and creativity works effectively towards preparing graduates 
+								for significant roles in business and society globally. APU has earned an enviable reputation as an award-winning 
+								University through its achievements in winning a host of prestigious awards at national and international levels, 
+								as well as an excellent track record in producing highly employable graduates who are able to immediately contribute 
+								to industry upon graduation.
+								<br><br>
+								Originally established as the Asia Pacific Institute of Information Technology (APIIT) in 1993 and the Asia Pacific 
+								University College of Technology & Innovation (UCTI) in 2004, APU’s sound approach to nurturing school leavers into 
+								qualified professionals has resulted in our graduates being highly sought after by employers. With an international 
+								student community from more than 110 countries studying in its Malaysian campus, APU offers a truly cosmopolitan 
+								learning environment which prepares students well for the global challenges which lie ahead.
+								<br><br>
+								While Technology forms a common core as an enabler across its academic programmes, APU offers a broad range of 
+								programmes encompassing areas such as Computing, Technology and Engineering, as well as programs in Business, 
+								Accounting and Banking & Finance.</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="footerInfo">
+			<div class="footerInfoHalf">
+				<div class="footerHalfDesc">
+					<div class="descContent">
+						<p>More information about Malaysian Universities to users whom are needed for help</p>
+						<a href="pageContact.html">Contact Us</a>
+						<a href="pageReport.html">Report Bugs</a>
+					</div>
+				</div>
+			</div>
+			<div class="footerInfoHalf2">
+				<div class="footerHalfOne">
+					<span>Supported Devices</span><br>
+					PC, Laptop, Mobile<br>
+					<br>
+					<span>End Users</span><br>
+					User, University Admin, SAS Admin
+				</div>
+				<div class="footerHalfTwo">
+					<span>Social Icons</span><br>
+					<i class="fab fa-facebook-square"></i>
+					<i class="fab fa-twitter-square"></i>
+					<i class="fab fa-instagram"></i>
+					<i class="fab fa-google-plus-square"></i><br>
+					<i class="fab fa-youtube-square"></i>
+					<i class="fab fa-skype"></i>
+					<i class="fab fa-linkedin"></i>
+					<i class="fab fa-snapchat-square"></i>
+				</div>
+			</div>
+		</div>
+		<div class="footerInfoBottom">
+		<p class="footerCopyright"><small>Copyright &copy; 2019 UIAA Platform. All rights reserved.</small></p>
+		<p class="footerTermPolicy"><small><span>Terms</span> | <span>Privacy Policy</span></small></p>
+		</div>
+	</footer>
+</body>
+</html>
